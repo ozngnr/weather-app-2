@@ -1,0 +1,27 @@
+@import "./styles/resets";
+@import "./styles/variables";
+
+//Components
+@import "./components/CurrentLocation/currentLocation";
+@import "./components/WeatherCard/weatherCard";
+@import "./components/Forecast/forecast";
+@import "./components/HumidityBar/humidityBar";
+@import "./components/Overlay/overlay";
+@import "./components/AutoComplete/autoComplete";
+@import "./components/DegreeToggle/degreeToggle";
+
+body {
+  font-family: $primaryFont;
+  font-weight: weight(regular);
+  background: $primaryColor;
+  color: $textColorLight;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+
+  @include tablet {
+    flex-direction: row;
+  }
+}

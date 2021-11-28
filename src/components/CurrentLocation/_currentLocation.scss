@@ -1,0 +1,98 @@
+.section-weather {
+  @include flexCenter(column);
+  justify-content: flex-start;
+  flex: 1;
+  position: relative;
+  min-width: 320px;
+  color: $textColorDark;
+  background-color: $secondaryColor;
+  background-image: url("../../assets/icons/Cloud-background.png");
+  background-repeat: no-repeat;
+  background-size: 150%;
+  background-blend-mode: soft-light;
+  background-position: center 50px;
+
+  @include tablet {
+    height: 100vh;
+    position: sticky;
+    top: 0;
+  }
+}
+
+.buttons {
+  @include flexCenter(row);
+  justify-content: space-between;
+  width: 90%;
+  padding: 1em 0;
+  z-index: 1;
+
+  button {
+    display: grid;
+    place-items: center;
+    font-size: 0.875rem;
+    padding: 0.5em 1.5em;
+    background: $primaryColor;
+    color: $textColorLight;
+    border: none;
+    border-radius: 50px;
+
+    &:hover {
+      background: $accentColor;
+      color: $secondaryColor;
+    }
+
+    &:active {
+      transform: scale(0.9, 0.9);
+    }
+
+    @include laptop {
+      font-size: 1rem;
+    }
+  }
+}
+
+.currentWeather {
+  padding: 4em 0 6em;
+  text-align: center;
+
+  &__img {
+    max-width: 200px;
+  }
+
+  &__temp {
+    font-size: 9rem;
+    color: $textColorLight;
+
+    & span {
+      font-size: 3rem;
+      color: $textColorDark;
+    }
+  }
+
+  &__state {
+    font-size: 2.25rem;
+    font-weight: weight(medium);
+    text-transform: capitalize;
+    margin-bottom: 2em;
+  }
+
+  &__date {
+    @include flexCenter(row);
+    margin-bottom: 2em;
+
+    &-dot {
+      display: inline-block;
+      margin: 0 1em;
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: $textColorDark;
+    }
+  }
+
+  @include tablet {
+    @include flexCenter(column);
+    justify-content: space-between;
+    height: 100vh;
+  }
+}

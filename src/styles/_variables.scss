@@ -1,0 +1,51 @@
+$primaryColor: #100e1d;
+$secondaryColor: #1e213a;
+$accentColor: #ffec65;
+$primaryFont: "Raleway", sans-serif;
+
+$textColorLight: #e7e7eb;
+$textColorDark: #a09fb1;
+
+$font-weights: (
+  "regular": 500,
+  "medium": 600,
+  "bold": 700,
+);
+
+$breakPointTablet: 600px;
+$breakPointLaptop: 900px;
+$breakPointLarge: 1200px;
+
+@function weight($weight-name) {
+  @return map-get($font-weights, $weight-name);
+}
+
+@mixin flexCenter($flexDirection) {
+  display: flex;
+  flex-direction: $flexDirection;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flexWrap {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+@mixin tablet {
+  @media (min-width: $breakPointTablet) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (min-width: $breakPointLaptop) {
+    @content;
+  }
+}
+
+@mixin laptopLarge {
+  @media (min-width: $breakPointLarge) {
+    @content;
+  }
+}

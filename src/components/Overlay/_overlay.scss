@@ -1,0 +1,42 @@
+.overlay-container {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  transform: translateX(-100%);
+  padding: 1em;
+  background: $secondaryColor;
+  transition: transform 0.2s ease-in-out;
+  z-index: 1;
+
+  .city-list {
+    list-style: none;
+  }
+
+  button {
+    font-family: inherit;
+    background: none;
+    color: $textColorLight;
+    border: 1px solid $textColorDark;
+    padding: 1em 1.5em;
+    margin-bottom: 1em;
+    width: 100%;
+  }
+}
+
+.open {
+  transform: translateX(0);
+}
+
+.search-bar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  button {
+    max-width: 150px;
+    background: $accentColor;
+    color: $primaryColor;
+    border: none;
+    border-radius: 2px;
+  }
+}
