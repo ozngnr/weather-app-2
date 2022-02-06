@@ -1,10 +1,9 @@
 import axios from "axios";
 import React, { useState, useEffect, createContext } from "react";
-import { apiConfig } from "../apiKeys";
 
 const WeatherContext = createContext();
 
-const API_KEY = apiConfig.weatherKey;
+const API_KEY = process.env.REACT_APP_WEATHER_KEY;
 const API_BASE = `https://api.openweathermap.org/data/2.5`;
 
 function WeatherContextProvider({ children }) {
