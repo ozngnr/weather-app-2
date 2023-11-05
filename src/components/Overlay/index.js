@@ -1,28 +1,30 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext } from 'react'
 import { WeatherContext } from '../../context/weatherContext';
 import AutoCompleteInput from '../AutoComplete';
 
-const Overlay = ({ focusRef, favourites }) => {
-  const { getWeather, setError, showOverlay } = useContext(WeatherContext);
-  const [userSearch, setUserSearch] = useState('');
+const Overlay = ({focusRef}) => { 
+  const { getWeather, setError, showOverlay} = useContext(WeatherContext)
+  const [userSearch, setUserSearch] = useState("")
+  const [favourites, setFavourites] = useState(["London", "Barcelona", "Sydney"])
 
   const handleSelect = (address) => {
-    if (!address) {
-      setError('City name is required!');
-      return;
+    if(!address) {
+      setError("City name is required!")
+      return
     }
-    const formattedValue = address.split(', ')[0];
-    getWeather(formattedValue);
-    setUserSearch('');
-  };
+    const formattedValue = address.split(", ")[0]
+    getWeather(formattedValue)
+    setUserSearch("")
+  }
 
   const handleChange = (value) => {
-    setError('');
-    setUserSearch(value);
-  };
-
+    setError("")
+    setUserSearch(value)
+  }
+  
   return (
     <div className={`overlay-container ${showOverlay && 'open'}`}>
+
       <div className="search-bar">
         <AutoCompleteInput
           userSearch={userSearch}
@@ -40,7 +42,7 @@ const Overlay = ({ focusRef, favourites }) => {
         ))}
       </ul>
     </div>
-  );
-};
+  )
+}
 
-export default Overlay;
+export default Overlay
